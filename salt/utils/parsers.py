@@ -2499,7 +2499,7 @@ class SaltSSHOptionParser(six.with_metaclass(OptionParserMeta,
                                              ConfigDirMixIn,
                                              MergeConfigMixIn,
                                              LogLevelMixIn,
-                                             TargetOptionsMixIn,
+                                             ExtendedTargetOptionsMixIn,
                                              OutputOptionsMixIn,
                                              SaltfileMixIn,
                                              HardCrashMixin)):
@@ -2513,6 +2513,7 @@ class SaltSSHOptionParser(six.with_metaclass(OptionParserMeta,
     _default_logging_level_ = 'warning'
     _default_logging_logfile_ = os.path.join(syspaths.LOGS_DIR, 'ssh')
     _loglevel_config_setting_name_ = 'cli_salt_run_log_file'
+    _setup_mp_logging_listener_ = True
 
     def _mixin_setup(self):
         self.add_option(

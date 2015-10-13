@@ -36,11 +36,8 @@ except ImportError:
     # Older jinja does not need markupsafe
     HAS_MARKUPSAFE = False
 
-try:
-    import xml
-    HAS_XML = True
-except ImportError:
-    HAS_XML = False
+# Removed per: https://github.com/saltstack/salt/issues/26584
+HAS_XML = False
 # pylint: enable=import-error,no-name-in-module
 
 try:
